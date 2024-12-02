@@ -17,7 +17,7 @@ const solve = (data) => {
     }, 0);
 };
 
-const startts = Date.now();
+const start = performance.now();
 const data = parseData(INPUT);
 console.log(solve(data));
-console.log(`Runtime ${Date.now() - startts}ms`);
+console.log(`Runtime ${performance.now() - start}ms`);

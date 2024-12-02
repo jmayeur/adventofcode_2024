@@ -8,10 +8,10 @@ const parseData = (INPUT) => {
     return lines[0].split(',').map(v => parseInt(v));
 };
 
-const startts = Date.now();
+const start = performance.now();
 const data = parseData(INPUT);
 console.log(data);
-console.log(\`Runtime \${Date.now() - startts}ms\`);
+console.log(\`Runtime \${performance.now() - start}ms\`);
 `;
 
 const wrappedDirCreate = (dir) => {
