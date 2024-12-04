@@ -5,15 +5,6 @@ const parseData = (INPUT) => {
 };
 
 const countCrosses = (data, aRow, aCol) => {
-  if (
-    aRow < 1 ||
-    aCol < 1 ||
-    aRow === data.length - 1 ||
-    aCol === data[aRow].length - 1
-  ) {
-    return 0;
-  }
-
   const upLeft = data[aRow - 1][aCol - 1];
   const upRight = data[aRow - 1][aCol + 1];
   const downLeft = data[aRow + 1][aCol - 1];
@@ -40,8 +31,8 @@ const countCrosses = (data, aRow, aCol) => {
 
 const getCount = (data) => {
   let count = 0;
-  for (let r = 0; r < data.length; r++) {
-    for (let c = 0; c < data[r].length; c++) {
+  for (let r = 1; r < data.length - 1; r++) {
+    for (let c = 1; c < data[r].length - 1; c++) {
       if (data[r][c] === "A") {
         count += countCrosses(data, r, c);
       }

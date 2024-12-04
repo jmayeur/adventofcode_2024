@@ -1,0 +1,14 @@
+{
+  "name": "adventofcode_2024",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.4.2"
+  }
+}
