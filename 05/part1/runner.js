@@ -24,46 +24,6 @@ const parseData = (INPUT) => {
   };
 };
 
-// const orderUpdates = (updates, ordering) => {
-//   return updates.map((update) => {
-//     const ordered = [];
-//     const left = [...update];
-//     while (left.length > 0) {
-//       const next = left.shift();
-//       const y = ordering[next];
-//       if (!y) {
-//         ordered.push(next);
-//         continue;
-//       }
-
-//       let index = ordered.length;
-//       if (next === 97) {
-//         console.log({ next, ordered, y });
-//       }
-//       y.forEach((value, i) => {
-//         if (ordered.includes(value)) {
-//           if (i < index) {
-//             index = i;
-//           }
-//         }
-//       });
-
-//       if (index > 0) {
-//         index--;
-//       }
-
-//       if (next === 97) {
-//         console.log({ next, ordered, index });
-//       }
-//       ordered.splice(index, 0, next);
-//       if (next === 97) {
-//         console.log({ next, ordered });
-//       }
-//     }
-//     return ordered;
-//   });
-// };
-
 const getOrderedMiddleSum = (updates, ordering) => {
   return updates.reduce((acc, update) => {
     if (
