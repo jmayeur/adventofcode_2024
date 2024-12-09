@@ -45,30 +45,31 @@ const isEquationPossible = (total, factors) => {
       return result;
     }
     const possibleTotal = factors.reduce((acc, factor, index) => {
-      if (index > 0) {
-        const operator = operatorPermutation[index - 1];
-        if (operator === "+") {
-          return acc + factor;
-        } else if (operator === "*") {
-          if (acc === 0) {
-            return 1 * factor;
-          }
-          return acc * factor;
+      const operator = operatorPermutation[index - 1];
+      if (operator === "+") {
+        return acc + factor;
+      } else if (operator === "*") {
+        if (acc === 0) {
+          return 1 * factor;
         }
+        return acc * factor;
       }
+
       return acc;
     });
-    
+
     if (possibleTotal === total) {
-        return possibleTotal;
+      return possibleTotal;
     }
     return 0;
   }, 0);
-
-
 };
 
 const start = performance.now();
 const data = parseData(INPUT);
-console.log(data.map(({ total, factors }) => isEquationPossible(total, factors)).reduce((a, v) => a + v));
+console.log(
+  data
+    .map(({ total, factors }) => isEquationPossible(total, factors))
+    .reduce((a, v) => a + v)
+);
 console.log(`Runtime ${performance.now() - start}ms`);

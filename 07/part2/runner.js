@@ -48,19 +48,19 @@ const isEquationPossible = (total, factors) => {
       if (acc > total) {
         return acc;
       }
-      if (index > 0) {
-        const operator = operatorPermutation[index - 1];
-        if (operator === "||") {
-          return parseInt(acc.toString() + factor.toString());
-        } else if (operator === "+") {
-          return acc + factor;
-        } else if (operator === "*") {
-          if (acc === 0) {
-            return 1 * factor;
-          }
-          return acc * factor;
+
+      const operator = operatorPermutation[index - 1];
+      if (operator === "||") {
+        return parseInt(acc.toString() + factor.toString());
+      } else if (operator === "+") {
+        return acc + factor;
+      } else if (operator === "*") {
+        if (acc === 0) {
+          return 1 * factor;
         }
+        return acc * factor;
       }
+
       return acc;
     });
 
